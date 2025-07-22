@@ -29,7 +29,7 @@ echo "$packages"
 echo "------------------------------------------------------------"
 
 # Execute the DNF install command with the '-y' flag to auto-confirm.
-dnf install $packages -y
+dnf install "$packages" -y
 
 echo "------------------------------------------------------------"
 echo "✅ Patching process completed."
