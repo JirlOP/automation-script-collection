@@ -31,6 +31,11 @@ echo "------------------------------------------------------------"
 # Execute the DNF install command with the '-y' flag to auto-confirm.
 dnf install "$packages" -y
 
+# Check the exit status of the DNF command.
+if [ $? -ne 0 ]; then
+  echo "❌ Error: Package installation failed. Please check the DNF output above for details."
+  exit 1
+fi
 echo "------------------------------------------------------------"
 echo "✅ Patching process completed."
 echo "⚠️  A system reboot is required for kernel updates to take effect."
